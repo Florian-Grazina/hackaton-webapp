@@ -1,0 +1,141 @@
+
+@font-face{
+    font-family: Montserrat;
+    src:url(../hackaton/font/Montserrat/static/Montserrat-SemiBold.ttf)
+}
+
+*{
+    font-family: Montserrat;
+    background-color: rgb(3, 0, 48); 
+    color:white;
+
+}
+
+/* Premier bloc contenant fenêtre et thermosat */
+#reglage{
+    margin-top: 60px ;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.Modif{
+    /* Placement titre et slider */
+    border:1px solid rgb(255, 255, 255);
+    height: max-content;
+    width: 200px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    
+   
+}
+
+#reponse{
+    
+    margin-top: 60px ;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.affichageModif{
+    
+    width: max-content;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+/* Slider */
+.bouton{
+    display: inline-block;
+	position: relative;
+	width: 70px;
+	height: 40px;
+	cursor: pointer;
+	overflow: hidden;
+   
+}
+
+.bouton input {
+	position: absolute;
+	top: -30px;
+	left: -30px;
+	width: 0;
+	height: 0;
+}
+
+.bouton input + span {
+    position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   background: #a8c4d6;
+   border-radius: 20px;
+}
+
+.bouton input:checked + span {
+	background: #34b6bfc2;
+}
+
+.bouton input + span:before {
+	content: "";
+	display: inline-block;
+	position: absolute;
+	top: 50%;
+	left: 4px;
+	width: 32px;
+	height: 32px;
+	background: white;
+	border-radius: 50%;
+	transform: translateY(-50%);
+	transition: all .5s;
+}
+
+.bouton input:checked + span:before {
+	left: 34px;
+}
+
+#historique{
+    
+    margin-top: 60px;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+    flex-wrap: wrap;
+}
+
+/* Bouton Historique temperature */
+button{
+    border:1px solid rgba(3, 0, 48, 0.692);
+    color:black;
+    background-color: rgba(255, 255, 255, 0.671);;
+    position: relative;
+    display: inline-flex;
+    width: 180px;
+    height: 55px;
+    margin: 0 15px;
+    perspective: 1000px;
+    font-size: 17px;
+
+    transform-style: preserve-3d;
+    transform: translateZ(-25px);
+    transition: transform .25s;
+    
+    
+  }
+ 
+  button:active{
+    transform: translateZ(-25px) rotateX(-90deg);
+  }
+
+#historique a {
+    text-decoration: none;
+}

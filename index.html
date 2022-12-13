@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body> 
+    <header>
+        <div id="top">
+            <div id="date"></div>
+            <div id="logo"></div>
+        </div>
+        <div id="alert_box">
+            <p id="alert"></p>
+            <div class="lds-facebook"><div></div><div></div><div></div></div></div>
+        </div>
+        <div id="arduino">
+            <div id="arduino_top">
+                <div id="temperature_box">
+                    <h2>Temperature</h2>
+                    <div class="data">
+                        <p id="temperature"></p>
+                        <div class="lds-facebook"><div></div><div></div><div></div></div>                </div>
+                </div>
+                <div id="humidite_box">
+                    <h2>Humidité</h2>
+                    <div class="data">
+                        <p id="humidite"></p>
+                        <div class="lds-facebook"><div></div><div></div><div></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="reglage">
+
+        <div class="Modif">
+                
+            <div class="affichageModif" id="thermostat">Thermostat <span id="resultatThermostat"></span></div>
+
+                <label class="bouton">
+                    <input type="checkbox" id="boutonThermostat"/>
+                    <span></span>
+                    
+                </label>
+        </div>
+
+        <div class="Modif">
+                
+            <div class="affichageModif" id="fenetre">Fenêtre <span id="resultatFenetre"></span></div>
+                
+                <label class="bouton">
+                    <input type="checkbox"  id="boutonFenetre"/> 
+                    <span></span>  
+                </label>
+        </div>
+
+        </div>
+        
+    <footer>
+        <input type="button" id="reset" class="button_footer" value="Reset"/>
+        
+        <div id="meteo">
+            <p>Meteo Metz:</p>
+            <div id="api_meteo">
+                <p id="temperature_ext"></p>
+                <img src="" alt="" id ="weatherIcon">
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="./script.js" type="module"></script>
+</html>

@@ -1,0 +1,359 @@
+@font-face {
+    font-family: montserrat;
+    src: url(./fonts/Montserrat/static/Montserrat-Medium.ttf);
+}
+
+body{
+    color: white;
+    background-color: #252526;
+    font-family: montserrat;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+}
+
+h2{
+    text-align: center;
+    font-size: 1.8em;
+}
+
+
+/* ----- Top ----- */
+
+#top{
+    display: flex;
+    height: 50px;
+}
+
+#date{
+    padding-left: 20px;
+    padding-top: 5px;
+    font-size: 1.2em;
+    flex-grow: 1;
+}
+
+#logo{
+    background-image: url(./image/logo_thick.png);
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 70%;
+    flex-grow: 4;
+}
+
+
+/* ----- Alert ----- */
+
+#alert_box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #313133;
+    border: solid 2px black;
+    border-radius: 5px;
+    height: 150px;    
+}
+
+#alert{
+    color: black;
+    font-size: 1.3em;
+    text-align: center;
+}
+
+
+/* ----- Date ----- */
+
+#date{
+    flex-grow: 1;
+    margin: 5px;
+    text-align: start;
+}
+
+/* ----- Arduino Data ----- */
+
+.data{
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+    height: 70px;
+}
+
+#arduino{
+    display: flex;
+    flex-direction: column;
+    height: 220px;
+}
+
+#arduino_top{
+    display: flex;
+    width: 100%;
+    border-bottom: solid 2px #313133;
+}
+
+#temperature_box{
+    flex: 1 1;
+}
+
+#humidite_box{
+    flex: 1 1;
+}
+
+
+/* Premier bloc contenant fenêtre et thermosat */
+#reglage{
+    margin-top: 20px ;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.Modif{
+    /* Placement titre et slider */
+    border: solid 2px black;
+    background-color: #313133;
+    border-radius: 5px;
+    height: max-content;
+    width: 160px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    
+   
+}
+
+.affichageModif{
+    font-size: 1.3em;
+    width: max-content;
+    height: 100px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.affichageModif span{
+    font-size: 1.3em;
+}
+
+/* Slider */
+.bouton{
+    display: inline-block;
+	position: relative;
+	width: 70px;
+	height: 40px;
+	cursor: pointer;
+	overflow: hidden;
+   
+}
+
+.bouton input {
+	position: absolute;
+	top: -30px;
+	left: -30px;
+	width: 0;
+	height: 0;
+}
+
+.bouton input + span {
+    position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   background-color: #5e1818cc;
+   border: 2px solid black;
+   border-radius: 20px;
+}
+
+.bouton input:checked + span {
+	background: #29793085;
+}
+
+.bouton input + span:before {
+	content: "";
+	display: inline-block;
+	position: absolute;
+	top: 50%;
+	left: 4px;
+	width: 32px;
+	height: 32px;
+	background: white;
+	border-radius: 50%;
+	transform: translateY(-50%);
+	transition: all .5s;
+}
+
+.bouton input:checked + span:before {
+	left: 34px;
+}
+
+
+/* Bouton Historique temperature */
+button{
+    border:1px solid rgba(3, 0, 48, 0.692);
+    color:black;
+    background-color: rgba(255, 255, 255, 0.671);;
+    position: relative;
+    display: inline-flex;
+    width: 180px;
+    height: 55px;
+    margin: 0 15px;
+    perspective: 1000px;
+    font-size: 17px;
+
+    transform-style: preserve-3d;
+    transform: translateZ(-25px);
+    transition: transform .25s;
+    
+    
+  }
+ 
+  button:active{
+    transform: translateZ(-25px) rotateX(-90deg);
+  }
+
+
+/* ----- Reset ----- */
+
+.button_footer{
+    font-family: montserrat;
+    color: white;
+    width: 100px;
+    height: 50px;
+    border: solid black 2px;
+    border-radius: 4px;
+    padding: 10px;
+    background-color: #313133;
+}
+
+.button_footer:active{
+    background-color:#252526;
+}
+
+.button_footer:hover{
+    background-color:#252526;
+}
+
+
+/* ----- Meteo ----- */
+
+footer{
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer p{
+    font-size: 1.2em;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+#meteo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: montserrat;
+    text-align: center;
+}
+
+#api_meteo{
+    display: flex;
+}
+
+#temperature_ext{
+    text-align: end;
+    width: 100px;
+    margin: auto 0 auto 0 ;
+    font-family: montserrat;
+    font-size: 1.2em;
+}
+
+
+
+
+/* ----- Responsive ----- */
+
+@media (min-width:700px) {
+    #date{
+        margin-top: 35px;
+    }
+    #top{
+        height: 100px;
+    }
+
+    #logo{
+        background-size: 30%;
+        background-position: center;
+    }
+
+    h2{
+        font-size: 2.8em;
+    }
+
+    .data{
+        font-size: 2.5em;
+    }
+
+    #alert{
+        font-size: 2em;
+    }
+
+}
+
+@media (min-width: 500px){
+    .Modif{
+        width: 200px;
+    }
+}
+
+
+/* ----- Animation ----- */
+.lds-facebook {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+.lds-facebook div {
+    display: inline-block;
+    position: absolute;
+    left: 8px;
+    width: 16px;
+    background: #5b5b5e;
+    animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+.lds-facebook div:nth-child(1) {
+    left: 8px;
+    animation-delay: -0.24s;
+}
+.lds-facebook div:nth-child(2) {
+    left: 32px;
+    animation-delay: -0.12s;
+}
+.lds-facebook div:nth-child(3) {
+    left: 56px;
+    animation-delay: 0;
+}
+@keyframes lds-facebook {
+    0% {
+        top: 8px;
+        height: 64px;
+    }
+    50%, 100% {
+        top: 24px;
+        height: 32px;
+    }
+    }
+  
