@@ -12,11 +12,12 @@ body{
 header{
     display: flex;
     flex-direction: column;
+    height: 300px;
 }
 
 h2{
     text-align: center;
-    font-size: 1.8em;
+    font-size: 1.5em;
 }
 
 
@@ -50,7 +51,7 @@ h2{
     background-color: #313133;
     border: solid 2px black;
     border-radius: 5px;
-    height: 150px;
+    height: 100px;
     text-align: center;
 }
 
@@ -58,6 +59,7 @@ h2{
     color: black;
     font-size: 1.3em;
     text-align: center;
+    margin-top: 10px;
 }
 
 
@@ -75,7 +77,6 @@ h2{
     width: 100%;
     text-align: center;
     font-size: 2em;
-    margin-bottom: 20px;
     height: 70px;
 }
 
@@ -103,7 +104,7 @@ h2{
 /* Premier bloc contenant fenêtre et thermosat */
 #reglage{
     margin-top: 20px ;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -252,7 +253,6 @@ button{
 /* ----- Meteo ----- */
 
 footer{
-    margin-top: 25px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -313,6 +313,9 @@ footer p{
 
     #alert{
         font-size: 2em;
+    }
+    #reglage{
+        margin-top: 100px;
     }
 
 }
