@@ -20,7 +20,7 @@
         <div id="arduino">
             <div id="arduino_top">
                 <div id="temperature_box">
-                    <h2>Temperature</h2>
+                    <h2>Température</h2>
                     <div class="data">
                         <p id="temperature"></p>
                         <div class="lds-facebook"><div></div><div></div><div></div></div>                </div>
@@ -37,35 +37,29 @@
     </header>
 
     <div id="reglage">
-
-        <div class="Modif">
-                
+        <div class="Modif">               
             <div class="affichageModif" id="thermostat">Thermostat <span id="resultatThermostat"></span></div>
-
                 <label class="bouton">
                     <input type="checkbox" id="boutonThermostat"/>
                     <span></span>
-                    
                 </label>
         </div>
 
         <div class="Modif">
-                
             <div class="affichageModif" id="fenetre">Fenêtre <span id="resultatFenetre"></span></div>
-                
                 <label class="bouton">
                     <input type="checkbox"  id="boutonFenetre"/> 
                     <span></span>  
                 </label>
         </div>
-
-        </div>
+    </div>
         
     <footer>
-        <input type="button" id="reset" class="button_footer" value="Reset"/>
-        
+        <div id="reset_box">
+            <input type="button" id="reset" class="button_footer" value="Reset"/>
+        </div>
         <div id="meteo">
-            <p>Meteo Metz:</p>
+            <p>Météo Metz:</p>
             <div id="api_meteo">
                 <p id="temperature_ext"></p>
                 <img src="" alt="" id ="weatherIcon">

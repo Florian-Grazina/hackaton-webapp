@@ -29,11 +29,11 @@ function showAlert(status){
     }
     else if (status == "OK"){
         alertBox.style.backgroundColor = "rgb(186, 255, 186, 0.5)";
-        document.querySelector("#alert").innerHTML = "Rien a signaler, profitez bien de cette journée. Il fait actuellement "+temperatureExt+"°C à Metz.";
+        document.querySelector("#alert").innerHTML = "Rien à signaler, profitez bien de cette journée. Il fait actuellement "+temperatureExt+"°C à Metz.";
     }
     else if (status == "NOK"){
         alertBox.style.backgroundColor = "rgb(255, 155, 155, 0.5)";
-        document.querySelector("#alert").innerHTML = "ATTENTION! Votre chauffage est allumé et votre fenêtre est ouverte!";
+        document.querySelector("#alert").innerHTML = "ATTENTION ! Votre chauffage est allumé et votre fenêtre est ouverte !";
     }
 }
 
@@ -101,61 +101,40 @@ function fetchData(){
 let thermostat=document.querySelector('#thermostat');
 let boutonThermostat=document.querySelector('#boutonThermostat');
 
-
 let fenetre=document.querySelector('#fenetre');
 let boutonFenetre=document.querySelector('#boutonFenetre');
 
-let boutonGraphThermostat=document.querySelector('#historique');
-    
 boutonFenetre.addEventListener('click',(e)=>{
         //changer affichage
         modification(e)
-
     });
-
-    // boutonFenetre.addEventListener('click',changeFenetre);
-    // appel ici la fonction entière qui comprend l'évenements
-
 
 boutonThermostat.addEventListener('click',(e)=>{
         //changer affichage
         modification(e)
     });
 
-boutonGraphThermostat=document.addEventListener('click',()=>{
-        //affichage Graph
-    })
-
-
-//true/false
-
 function showFenetre() {
-    
     
     //windows/open
     if(windowIsOpen){
         document.querySelector('#resultatFenetre').innerHTML="Ouvert";
-
         boutonFenetre.checked=true;
 
     }else if (!windowIsOpen){
         document.querySelector('#resultatFenetre').innerHTML="Fermé";
-
         boutonFenetre.checked=false;
     } 
-    
 }
 
 function showThermostat() {
     
     if(heaterIsOpen){
         document.querySelector('#resultatThermostat').innerHTML="Ouvert";
-
         boutonThermostat.checked=true;
 
     }else if(!heaterIsOpen){
         document.querySelector('#resultatThermostat').innerHTML="Fermé";
-
         boutonThermostat.checked=false;
     } 
 }
