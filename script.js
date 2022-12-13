@@ -20,6 +20,7 @@ document.querySelector("#date").innerHTML = currentDate;
 // ----- Alert -----
 
 var alertBox = document.querySelector("#alert_box");
+var alertSound = document.querySelector("#alert_sound");
 
 function showAlert(status){
 
@@ -34,6 +35,10 @@ function showAlert(status){
     else if (status == "NOK"){
         alertBox.style.backgroundColor = "rgb(255, 155, 155, 0.5)";
         document.querySelector("#alert").innerHTML = "ATTENTION ! Votre chauffage est allumé et votre fenêtre est ouverte !";
+        alertSound.play();
+    }
+    else{
+        alertBox.style.backgroundColor = "#313133";
     }
 }
 
@@ -84,6 +89,7 @@ function fetchData(){
         };
     })
     .catch((error) => {
+        alertStatus = "";
         document.querySelector("#alert").innerHTML = "Impossible de se connecter au serveur. Appuyez sur reset pour réessayer.";
         document.querySelector("#temperature").innerHTML = "None";
         document.querySelector("#humidite").innerHTML = "None";
@@ -94,6 +100,8 @@ function fetchData(){
         };
     });
 }
+
+const interval = setInterval(fetchData,10000);
 
 
 // ----- Buttons windows / heater -----
