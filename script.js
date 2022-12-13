@@ -40,6 +40,7 @@ function showAlert(status){
 
 // ----- Arduino -----
 
+var ip ="http://192.168.140.110"
 var temperature;
 var humidity;
 var window;
@@ -53,7 +54,7 @@ var divHumidity = document.querySelector("#humidite")
 const loading = document.querySelectorAll(".lds-facebook");
 
 function fetchData(){
-    fetch("http://192.168.49.110")
+    fetch(ip)
     .then((response) => {
         if (response.ok){
             return response.json();
@@ -162,23 +163,22 @@ function showThermostat() {
 async function modification (e){
 
     if(e.target.checked){
-        var message="";
         if (e.target==boutonThermostat){
             document.querySelector('#resultatThermostat').innerHTML="Ouvert";
-            message=fetch('http://192.168.49.110/heater/open');
+            fetch(ip+'/heater/open');
         }else{
             document.querySelector('#resultatFenetre').innerHTML="Ouvert";
-            message=fetch('http://192.168.49.110/window/open');
+            fetch(ip+'/window/open');
         }
     }else{
         if(e.target==boutonThermostat){
             document.querySelector('#resultatThermostat').innerHTML="Fermé";
 
-            message=fetch('http://192.168.49.110/heater/close');
+            fetch(ip+'/heater/close');
         }else{
             document.querySelector('#resultatFenetre').innerHTML="Fermé";
 
-            message=fetch('http://192.168.49.110/window/close');
+            fetch(ip+'/window/close');
         }
     }
 
