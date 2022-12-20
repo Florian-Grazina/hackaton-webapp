@@ -199,7 +199,6 @@ function reset(){
 
 // ----- Weather -----
 var weatherUrl = "https://api.openweathermap.org/data/2.5/weather?lat=49.1193089&lon=6.1757156&appid=50ec15776b6ffbb8aa15e79cad0a6321"
-var weather;
 var temperatureExt;
 const tempDiv = document.getElementById("temperature_ext");
 const icon = document.getElementById("weatherIcon");
@@ -209,10 +208,10 @@ fetch(weatherUrl)
   .then((thisWeather) => main(thisWeather));
 
 function main(thisWeather){
+    console.log(thisWeather)
     console.log(thisWeather.main.temp);
     temperatureExt = Math.round((thisWeather.main.temp-273)*10)/10;
     tempDiv.textContent = temperatureExt+"C°";
-    console.log(thisWeather);
     let iconURL= "http://openweathermap.org/img/wn/"+(thisWeather.weather[0].icon)+"@2x.png";
     fetch(iconURL)
      .then(icon.src=iconURL);
